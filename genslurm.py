@@ -16,8 +16,7 @@ for idx, line in enumerate(lines):
     first_line = line.strip().split(',')
     job_name, partition,nodes, ntasks, mem, gpu, threads, nx, ny, nz, rt = first_line
 
-    slurm_scripts.append( f"""
-#!/bin/bash
+    slurm_scripts.append( f"""#!/bin/bash
 #SBATCH --job-name {job_name}        
 #SBATCH --array 1              
 #SBATCH --ntasks-per-node {ntasks}                        
