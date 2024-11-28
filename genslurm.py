@@ -82,7 +82,7 @@ for LOG_FILE in "${{LOG_FILES[@]}}"; do
 
 done
 # Delete them so we dont redo values
-for LOG_FILE in "${LOG_FILES[@]}"; do
+for LOG_FILE in "${{LOG_FILES[@]}}"; do
         if [ -f "$LOG_FILE" ]; then
                 rm -f "$LOG_FILE"
         fi
