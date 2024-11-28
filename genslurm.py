@@ -81,7 +81,12 @@ for LOG_FILE in "${{LOG_FILES[@]}}"; do
         echo "Results written to $RESULTS_CSV"
 
 done
-
+# Delete them so we dont redo values
+for LOG_FILE in "${LOG_FILES[@]}"; do
+        if [ -f "$LOG_FILE" ]; then
+                rm -f "$LOG_FILE"
+        fi
+done
 
     """)
 for idx, file in enumerate(slurms):
