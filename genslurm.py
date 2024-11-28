@@ -44,7 +44,7 @@ fi
 
 
 
-srun --mpi=pmi2 --partition  {partition} --gpu={gpu} --nodes={nodes} --ntasks={ntasks} --mem={mem} xhpcg {nx} {ny} {nz} {rt} 
+srun --mpi=pmi2 --partition  {partition} --gpus={gpu} --nodes={nodes} --ntasks={ntasks} --mem={mem} xhpcg {nx} {ny} {nz} {rt} 
 
 
 if [ ! -f "$RESULTS_CSV" ]; then
