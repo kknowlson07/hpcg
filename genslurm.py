@@ -82,7 +82,7 @@ for LOG_FILE in "${{LOG_FILES[@]}}"; do
 
 done
 
-rm -f ""$SLURM_SUBMIT_DIR/HPCG-Benchmark_3.*.txt"
+
     """)
 for idx, file in enumerate(slurms):
     output = os.path.join(current_dir, file)
