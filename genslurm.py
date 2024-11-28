@@ -90,26 +90,6 @@ for idx, file in enumerate(slurms):
     with open(output, 'w') as f:
         f.write(slurm_scripts[idx])
     os.chmod(output, 0o755)
-    #os.system(f"sbatch {file}")
+    os.system(f"sbatch {file}")
 
-'''def main():
-    parser = argparse.ArgumentParser(description="Pick topics")
-    parser.add_argument('--amdahl', type=str, help='Keep problem size fixed, increase CPUs (task per node)', default=1)
-    parser.add_argument('--gustafson', type=int, help='Problem size grows, so does CPUS (task per node)', default=0)
-    parser.add_argument('--gpu', type=str, help='GPU', default=0)
-    
-    args = parser.parse_args()
-    amdahl = args.amdahl
-    gustafson = args.gustafson
-    gpu = args.gpu
-    
-    if amdahl or gustafson:
-         amdahl()
-    elif gpu:
-         gpu()
-    else:
-        print("Oops you need to pick a flag, --amdahl 1/0, --gustafson 1/0, --gpu 1/0")
 
-if __name__ == "__main__":
-    main()
-'''
