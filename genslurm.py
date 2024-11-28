@@ -51,6 +51,10 @@ if [ ! -f "$RESULTS_CSV" ]; then
         echo "GFLOP/s, Execution Time, Optimization Phase Time, Raw SpMV, Raw MG" > "$RESULTS_CSV"
 fi
 
+
+echo "Listing files in the submit directory: $SLURM_SUBMIT_DIR"
+ls -l "$SLURM_SUBMIT_DIR
+
 LOG_FILES=($SLURM_SUBMIT_DIR/HPCG-Benchmark_3.*.txt)
 
 if [ ${{#LOG_FILES[@]}} -eq 0 ]; then
