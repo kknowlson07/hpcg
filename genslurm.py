@@ -53,7 +53,7 @@ fi
 
 
 echo "Listing files in the submit directory: $SLURM_SUBMIT_DIR"
-ls -l "$SLURM_SUBMIT_DIR
+ls -l "$SLURM_SUBMIT_DIR"
 
 LOG_FILES=($SLURM_SUBMIT_DIR/HPCG-Benchmark_3.*.txt)
 
