@@ -13,7 +13,10 @@ slurm_scripts=[]
 
 for idx, line in enumerate(lines):
     slurms.append(f'script{idx}.slurm')
-    first_line = line.strip().split(',')
+    first_line = line.strip()
+    if not line:
+        continue
+    first_line = line.split(',')
     job_name, partition,nodes, ntasks, mem, gpu, threads, nx, ny, nz, rt = first_line
 
     slurm_scripts.append( f"""#!/bin/bash
