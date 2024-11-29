@@ -78,7 +78,7 @@ for LOG_FILE in "${{LOG_FILES[@]}}"; do
         MG_TIME=$(grep -oP 'Benchmark Time Summary::MG=\K[\d\.]+' "$LOG_FILE")
 
         # Append the extracted data to results.csv
-        echo "NTasks:{ntasks},Mem:{mem},Nodes:{nodes},GPU:{gpu},Threads:{threads},Nx:{nx},Ny:{ny},Nz:{nz},rt:{rt},GFLOPS:$GFLOP,EXEC:$EXEC_TIME,optP:$OPT_PHASE_TIME,SPMV:$SPMV_TIME,MG:$MG_TIME" >> "$RESULTS_CSV"
+        echo "NTasks:{ntasks}({ntasks*nodes}),Mem:{mem},Nodes:{nodes},GPU:{gpu},Threads:{threads},Nx:{nx},Ny:{ny},Nz:{nz},rt:{rt},GFLOPS:$GFLOP,EXEC:$EXEC_TIME,optP:$OPT_PHASE_TIME,SPMV:$SPMV_TIME,MG:$MG_TIME" >> "$RESULTS_CSV"
         echo "Results for this run:"
         echo "GFLOP/s: $GFLOP"
         echo "Execution Time: $EXEC_TIME"
