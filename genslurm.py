@@ -17,13 +17,13 @@ for idx, line in enumerate(lines):
     if not line:
         continue
     first_line = line.split(',')
-    job_name, partition,nodes, ntasks, mem, gpu, threads, nx, ny, nz, rt = first_line
+    job_name, partition,nodes, ntasks, mem, gpu, threads, nx, ny, nz, rt, time = first_line
 
     slurm_scripts.append( f"""#!/bin/bash
 #SBATCH --job-name {job_name}        
 #SBATCH --array 1              
 #SBATCH --ntasks-per-node {ntasks}                        
-#SBATCH --time 00:15:00             
+#SBATCH --time 00:{time}             
 #SBATCH --mem {mem}                        
 #SBATCH --partition {partition}            
 #SBATCH --nodes {nodes} 
