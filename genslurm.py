@@ -27,7 +27,7 @@ for idx, line in enumerate(lines):
 #SBATCH --mem {mem}                        
 #SBATCH --partition {partition}            
 #SBATCH --nodes {nodes} 
-#SBATCH --gres=gpus:{gpu}  
+#SBATCH --gres=gpus:a100:{gpu}  
 # Load packages
 module load intel/20.0.4 hpcg
 
@@ -47,7 +47,7 @@ fi
 
 
 
-srun --mpi=pmi2 --partition  {partition} --gpus={gpu} --nodes={nodes} --ntasks={ntasks} --mem={mem} xhpcg {nx} {ny} {nz} {rt} 
+srun --mpi=pmi2 --partition={partition} --gpus={gpu} --nodes={nodes} --ntasks-per-node={ntasks} --mem={mem} xhpcg {nx} {ny} {nz} {rt} 
 
 
 if [ ! -f "$RESULTS_CSV" ]; then
