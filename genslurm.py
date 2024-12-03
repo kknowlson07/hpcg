@@ -27,7 +27,7 @@ for idx, line in enumerate(lines):
 #SBATCH --mem {mem}                        
 #SBATCH --partition {partition}            
 #SBATCH --nodes {nodes} 
-#SBATCH --gres=gpu:a100:{gpu}  
+# #SBATCH --gres=gpu:a100:{gpu}  
 # Load packages
 module load intel/20.0.4 hpcg
 
